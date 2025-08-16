@@ -2,22 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Second Blog Post</title>
+    <title>openmetro maps app</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
-        <h1>My Blog</h1>
+        <h1>boks blog</h1>
     </header>
     <main>
         <nav>
             <a href="../index.html">home</a>
         </nav>
         <article>
-            <h2>Second Blog Post</h2>
-            <p><em>August 10, 2025</em></p>
-            <p>This is another example post. You can add as many posts as you like in the <code>posts</code> folder.</p>
+            <h2>openmetro maps app</h2>
+            <p><em>posted on august 15, 2025</em></p>
+            <p>I got the maps app working again due to one archive on the Wayback Machine.</p>
+            <p>Once giving it this data, it actually loads tiles from VirtualEarth, although it doesn't work perfectly.</p>
+            <p>By "not working perfectly", I mean it barely works... It only tries to load data for a little bit, then completely stops.</p>
+
+            <img src="../attachments/maps-preview.png">
+            <p>It also doesn't like to load the whole map for some reason, even if you start the app out of said portion or it's set as your home location.</p>
+            <p>I plan to fix this, but it's not a priority right now.</p>
         </article>
     </main>
+    <script>
+    document.querySelectorAll('article img').forEach(img => {
+        img.addEventListener('click', function() {
+            const popupBg = document.createElement('div');
+            popupBg.className = 'img-popup-bg';
+
+            const popupImg = document.createElement('img');
+            popupImg.src = img.src;
+
+            // Add message
+            const msg = document.createElement('div');
+            msg.textContent = 'Click anywhere to close.';
+            msg.style.color = '#fafafa';
+            msg.style.textAlign = 'center';
+            msg.style.marginTop = '1rem';
+            msg.style.fontSize = '1.1rem';
+
+            // Container for image and message
+            const popupContainer = document.createElement('div');
+            popupContainer.style.display = 'flex';
+            popupContainer.style.flexDirection = 'column';
+            popupContainer.style.alignItems = 'center';
+
+            popupContainer.appendChild(popupImg);
+            popupContainer.appendChild(msg);
+            popupBg.appendChild(popupContainer);
+
+            popupBg.addEventListener('click', () => popupBg.remove());
+            document.body.appendChild(popupBg);
+        });
+    });
+    </script>
 </body>
 </html>

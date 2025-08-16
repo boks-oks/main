@@ -69,6 +69,32 @@ nav a:hover {
 .article-list a:hover {
     color: #bbdefb;
 }
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+/* Popup styles */
+.img-popup-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.img-popup-bg img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+}
 footer {
     text-align: center;
     color: #b0b0b0;
